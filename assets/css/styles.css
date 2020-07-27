@@ -1,0 +1,237 @@
+/*Custom Variables*/
+:root {
+  --primary-color: #BE4979;
+  --secondary-color: #b33267;
+  --text-color: #333333;
+}
+/*General Styling*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  color: var(--text-color);
+  font-family: 'Source Code Pro', monospace;
+}
+a {
+  color: black;
+}
+a:hover {
+  color: var(--primary-color);
+}
+ul {
+  list-style: none;
+}
+/*Utility Class*/
+.primary-color {
+  color: var(--primary-color);
+}
+.space {
+  margin-bottom: 5rem;
+}
+
+/*BUTTONS*/
+.btn {
+  border-radius: 0;
+}
+.btn-primary {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+.btn-primary:hover {
+  background: var(--secondary-color);
+  border: 1px solid var(--secondary-color);  
+}
+
+/*TITLES*/
+.about-title, .services-title, .portfolio-title {
+  position: relative;
+}
+.about-title:after, .services-title:after, .portfolio-title:after{
+  position: absolute;
+  content: '';
+  width: 70px;
+  height: 3px;
+  background-color: #BE4979;
+}
+.about-title:after, .portfolio-title:after {
+  left: 0;
+  bottom: -7px;
+}
+.services-title:after{
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -7px;
+}
+ .portfolio-title:after{
+  left: 10px;
+}
+.pro-title {
+  font-weight: 700;
+  position: relative;
+  width: 250px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.pro-title:after {
+  position: absolute;
+  content: ':';
+  color: #BE4979;
+  font-size: 14px;
+  left: 200px;
+}
+/* Background Image*/
+#hero, #contact, #services {
+  background-image: url('../img/bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+  
+
+/*********************************************************************************************
+                                          NAVIGATION BAR
+**********************************************************************************************/
+.navbar-toggler-icon {
+  background-image: url('../img/burger.png');
+  width: 40px;
+}
+.navbar-brand {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/*********************************************************************************************
+                                          HERO
+**********************************************************************************************/
+#hero {
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  /*background: url('../img/sam-smith.jpg')*/
+}
+
+
+/*********************************************************************************************
+                                          ABOUT
+**********************************************************************************************/
+#about img {
+  object-fit: cover;
+  height: 70%;
+}
+
+
+/*********************************************************************************************
+                                          SERVICES
+**********************************************************************************************/
+.features {
+  border-bottom: 3px solid #BE4979;
+  width: 600px;
+  margin: auto;
+}
+
+/*********************************************************************************************
+                                          PORTFOLIO
+**********************************************************************************************/
+#portfolio img{
+  cursor: pointer;
+  transition: 0.5s;
+}
+#portfolio img:hover {
+  transform: scale(0.8);
+}
+
+
+/*********************************************************************************************
+                                          CONTACT
+**********************************************************************************************/
+.form-control {
+  width: 70%;
+  background: white;
+  border: 1px solid #333333;
+}
+
+/*********************************************************************************************
+                                          FOOTER
+**********************************************************************************************/
+footer ul{
+  align-items: center;
+  justify-content: space-around;
+}
+.credit {
+  background: #BE4979;
+  color: white;
+}
+.credit a{
+  color: white;
+}
+
+/*********************************************************************************************
+                                          MEDIA QUERIES
+**********************************************************************************************/
+@media screen and (max-width: 992px) {
+  .pro-title{
+    width: 100px;
+  }
+  .pro-title:after {
+    left: 90px;
+  }
+
+@media screen and (max-width: 767px) {
+  #about img {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .features {
+    width: 320px;
+  } 
+  #hero img {
+    max-width: 60%;
+  }
+}
+@media screen and (max-width: 460px){
+  footer{
+    font-size: 10px;
+  }
+  .features {
+    width: 200px;
+  }
+}
+
+
+
+/*********************************************************************************************
+                                          ANIMATIONS
+**********************************************************************************************/
+@keyframes intro {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes intro2{
+  from {
+    opacity: 0;
+    transform: translateY(-200%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+#hero h5,#hero h1{
+  animation: intro 1s ease-in;
+}
+#hero .btn-primary {
+  animation: intro2 0.5s ease-in;
+  animation-delay: 1s;
+}
+
